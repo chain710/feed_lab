@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="X-UA-Compatible" content="chrome=1" />
+<title>{{ page_title }}</title>
+<style>
+#wrapper {
+    margin: 0 auto;
+    width: 700px;
+}
+
+#bookmark_list {
+    width: auto;
+}
+
+.tableViewCell {
+    background-color: #F8F8F8;
+}
+
+.clear {
+    clear: both;
+    font-size: 1px;
+    line-height: 1px;
+    margin: 1px;
+}
+
+.titleRow {
+    padding: 3px;
+    font-weight: bold;
+    font-size:20px;
+}
+
+.pub_date {
+    margin-left: 10px;
+    font-style:italic;
+    font-size:16px;
+    font-weight: normal;
+}
+
+.summaryRow {
+    padding: 5px 10px;
+}
+</style>
+</head>
+<body>
+<div id="wrapper">
+<div id="bookmark_list">
+{% for entry in entries %}
+<div class="tableViewCell">
+<div class="cornerControls">
+</div>
+<div class="titleRow">{{ entry.title }}<span class="pub_date">@{{ entry.date }}</span></div>
+<div class="summaryRow">{{ entry.content }}</div>
+<div class="clear">&nbsp;</div>
+</div>
+{% endfor %}
+</div>
+</div>
+</body>
+</html>
